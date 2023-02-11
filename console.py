@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         arg_dict = {
             "all": self.do_all,
             "show": self.do_show,
-            "destory": self.do_destroy,
+            "destroy": self.do_destroy,
             "count": self.do_count,
             "update": self.do_update
         }
@@ -108,17 +108,17 @@ class HBNBCommand(cmd.Cmd):
     def do_destroy(self, arg):
         """This method deletes a class instance of a given id"""
         argl = parse(arg)
-        obj_dict = storage.all()
+        objdict = storage.all()
         if len(argl) == 0:
             print("** class name missing **")
         elif argl[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(argl) == 1:
             print("** instance id is missing **")
-        elif "{}.{}".format(argl[0], argl[1]) not in obj_dict.keys():
+        elif "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
             print("** no instance found **")
         else:
-            del obj_dict["{}.{}".format(argl[0], argl[1])]
+            del objdict["{}.{}".format(argl[0], argl[1])]
             storage.save()
 
     def do_all(self, arg):
