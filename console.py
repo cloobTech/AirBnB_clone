@@ -32,7 +32,7 @@ def parse(arg):
 
 
 class HBNBCommand(cmd.Cmd):
-    """This class handles the airbnb clone command interpreter"""
+    """This class handles the airbnb clone command(cmd) interpreter"""
     prompt = "(hbnb) "
     __classes = {
         "BaseModel",
