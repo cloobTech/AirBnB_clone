@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """This file defines the BaseModel Class."""
+
+
 import models
 from uuid import uuid4
 from datetime import datetime
@@ -7,6 +9,7 @@ from datetime import datetime
 
 class BaseModel:
     """This class is a representation of the basemodel for airbnb clone project"""
+
     def __init__(self, *args, **kwargs):
         """The constructor, it initializes a new BaseModel"""
         time_format = "%Y-%m-%dT%H:%M:%S.%f"
