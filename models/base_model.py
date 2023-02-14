@@ -8,7 +8,7 @@ from datetime import datetime
 
 
 class BaseModel:
-    """This class is a representation of the basemodel for airbnb clone project"""
+    """represents the basemodel for airbnb clone project"""
 
     def __init__(self, *args, **kwargs):
         """The constructor, it initializes a new BaseModel"""
@@ -31,7 +31,7 @@ class BaseModel:
         models.storage.save()
 
     def to_dict(self):
-        """This func returns the dictionary representation of the BaseModel instance/object"""
+        """returns the dictionary representation of a cls instance/object"""
         ret_dict = self.__dict__.copy()
         ret_dict["created_at"] = self.created_at.isoformat()
         ret_dict["updated_at"] = self.updated_at.isoformat()
@@ -39,6 +39,6 @@ class BaseModel:
         return ret_dict
 
     def __str__(self):
-        """This func returns the str representation of the BaseModel instance/object"""
+        """returns the str representation of a class instance/object"""
         clsname = self.__class__.__name__
         return "[{}] ({}) {}".format(clsname, self.id, self.__dict__)

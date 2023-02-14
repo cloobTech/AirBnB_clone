@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """This file handles the hbnb airbnb clone console"""
-
 import cmd
 import re
 from shlex import split
@@ -45,11 +44,11 @@ class HBNBCommand(cmd.Cmd):
     }
 
     def emptyline(self):
-        """This method tells the prog to do nothing when an empty line is received"""
+        """do nothing when an empty line is received"""
         pass
 
     def default(self, arg):
-        """This method upholds the default behaviour for the cmd module when an input is invalid"""
+        """default behaviour for the cmd module when an input is invalid"""
         arg_dict = {
             "all": self.do_all,
             "show": self.do_show,
@@ -91,7 +90,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
         """Usage: show <class> <id> or <class>.show(<id>)
-        This method displays the string representation of a class instance of a given id"""
+        This method displays the string representation of
+        a class instance of a given id"""
         argl = parse(arg)
         obj_dict = storage.all()
         if len(argl) == 0:
@@ -183,8 +183,8 @@ class HBNBCommand(cmd.Cmd):
         elif type(eval(argl[2])) == dict:
             obj = obj_dict["{}.{}".format(argl[0], argl[1])]
             for key, value in eval(argl[2]).items():
-                if (key in obj.__class__.__dict__.keys() and
-                type(obj.__class__.__dict__[key]) in {str, int, float}):
+                if key in obj.__class__.__dict__.keys() and \
+                        type(obj.__class__.__dict__[key]) in {str, int, float}:
                     valtype = type(obj.__class__.__dict__[key])
                     obj.__dict__[key] = valtype(value)
                 else:
