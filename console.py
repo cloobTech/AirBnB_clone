@@ -7,6 +7,7 @@ from models import storage
 from models.base_model import BaseModel
 from models.user import User
 from models.city import City
+from models.state import State
 from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
@@ -114,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
         elif argl[0] not in HBNBCommand.__classes:
             print("** class doesn't exist **")
         elif len(argl) == 1:
-            print("** instance id is missing **")
+            print("** instance id missing **")
         elif "{}.{}".format(argl[0], argl[1]) not in objdict.keys():
             print("** no instance found **")
         else:
