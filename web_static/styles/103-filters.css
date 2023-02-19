@@ -1,0 +1,105 @@
+/** @format */
+
+/* SECTION ONE */
+.container > section.filters {
+  background-color: #ffffff;
+  height: 70px;
+  width: 100%;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container > section > button {
+  font-size: 18px;
+  background-color: #ff5a5f;
+  color: #ffffff;
+  height: 48px;
+  width: 20%;
+  border: none;
+  border-radius: 4px;
+  position: absolute;
+  right: 30px;
+}
+
+.container > section > div.locations,
+.container > section > div.amenities {
+  height: 100%;
+  width: 25%;
+  border-right: 1px solid #dddddd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.container > section div.amenities {
+  border: none;
+}
+
+.container > section > div.locations > h3,
+.container > section > div.amenities > h3 {
+  font-weight: 600;
+}
+
+.container > section > div.locations > h4,
+.container > section > div.amenities > h4 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.container > section > div.locations > div,
+.container > section > div.amenities > div {
+  border: 1px solid #dddddd;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  padding: 1.5rem;
+  border-radius: 4px;
+  background-color: #fafafa;
+  display: none;
+}
+
+.container > section > div.locations > div > ul.popover,
+.container > section > div.amenities > div > ul.popover {
+  margin-bottom: 1.5rem;
+}
+
+.container > section > div.locations > div > ul.popover > li,
+.container > section > div.amenities > div > ul.popover > li {
+  margin: 0.25rem 1rem;
+}
+
+.container > section > div.locations > div > ul.popover > li > ul > li,
+.container > section > div.amenities > div > ul.popover > li > ul > li {
+  margin: 0.25rem 1rem;
+}
+
+/* HOVER */
+.container > section > div.locations:hover > div {
+  display: block;
+}
+.container > section div.amenities:hover > div {
+  display: block;
+}
+
+@media screen and (max-width: 800px) {
+  .container > section.filters {
+    max-width: 350px;
+    margin: auto;
+  }
+
+  .container > section > button {
+    right: 15px;
+  }
+
+  .container > section > div.locations > h4,
+  .container > section > div.amenities > h4 {
+    display: none;
+  }
+}
+

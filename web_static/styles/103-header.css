@@ -1,0 +1,16 @@
+/** @format */
+
+header {
+  background-color: #ffffff;
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+}
+
+header > .logo {
+  background-image: url("/images/logo.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  margin-left: 20px;
+}
+
